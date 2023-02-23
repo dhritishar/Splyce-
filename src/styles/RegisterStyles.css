@@ -1,0 +1,18 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+/* add styling for the registration page */
+.register-form {
+    border: 1px solid black;
+    padding: 30px;
+    width: 35%;
+}
+/*add styling for the login page */
+.login-form {
+    border: 1px solid black;
+    padding: 30px;
+    width: 35%;
+}
