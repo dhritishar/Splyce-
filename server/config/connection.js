@@ -1,11 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const colors = require("colors");
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/', //need to change database name
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
-
-module.exports = mongoose.connection;
+//check the connection
+const connectDB = async() => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL);
+        console.log(`Mongodb is connected ${mongoose.connection.host}`.bgGreen.white);
+    } catch (error) {
+        console.log(`Mongodb Server Issue ${error}`.bgRed.white);
+    }
+}
+module.exports = connectDB;
